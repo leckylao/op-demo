@@ -1,11 +1,11 @@
 const { expect } = require("chai");
 
-const hre = require('hardhat')
-const l2ethers = hre.l2ethers
+// const hre = require('hardhat')
+// const l2ethers = hre.l2ethers
 
 describe("TestArray", function(){
   it('should return array', async function() {
-    const Test = await l2ethers.getContractFactory("TestArray");
+    const Test = await ethers.getContractFactory("TestArray");
     let test = await Test.deploy({ gasLimit: 8e6 });
     let tests = await test.get();
     expect(tests).to.deep.equal([1,2,3,4,5]);
